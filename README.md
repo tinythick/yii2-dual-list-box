@@ -76,3 +76,11 @@ $model = new ModelForm;
 $model->load(Yii::$app->request->post());
 $region_model = Json::decode($model->list_regions);
 ```
+
+
+### Controller UPDATE ###
+Don't forget to encode the list to have a selected value on update
+```php
+$model = $this->findModel($id);
+$model = Json::encode($model->list_regions);
+```
